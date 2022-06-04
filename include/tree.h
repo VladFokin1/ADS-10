@@ -32,8 +32,7 @@ class Tree {
     
     std::vector<std::vector<char>> allPermutations;
   
-    void countAllPermutations(Node* root) {
-      std::vector<char> res;
+    void countAllPermutations(Node* root, std::vector<char> res) {
       if (root->value != '*') {
         res.push_back(root->value);
       }
@@ -48,7 +47,7 @@ class Tree {
 
  public:
     std::vector<char> getPermutation(int i) {
-      if (i >= allPermutations.size()) return "";
+      if (i >= allPermutations.size()) return std::vector<char> empt;
       return allPermutations[i];
     }
     Tree(std::vector<char> input) {
