@@ -32,29 +32,31 @@ class Tree {
     
     std::vector<std::vector<char>> allPermutations;
   
-    void countAllPermutations(Node* root, std::vector<char> res) {
+    void countAllPermutations(Node* root, std::vector<char> temp) {
       if (root->value != '*') {
-        res.push_back(root->value);
+        temp.push_back(root->value);
       }
       if (!root->childs.size()) {
-        allPermutations.push_back(res);
+        allPermutations.push_back(temp);
         return;
       }
       for (int i = 0; i < root->childs.size(); i++) {
-        countAllPermutations(root->childs[i], res);
+        countAllPermutations(root->childs[i], temp);
       }
     }
 
  public:
     std::vector<char> getPermutation(int i) {
-      if (i >= allPermutations.size()) return std::vector<char> empt;
+      std::vector<char> empt;
+      if (i >= allPermutations.size()) return empt;
       return allPermutations[i];
     }
     Tree(std::vector<char> input) {
       root = new Node();
       root->value = '*';
       createTree(root, input);
-      countAllPermutations(root);
+      std::vector<char> temp_1;
+      countAllPermutations(root, temp_1);
     }
 }
 #endif  // INCLUDE_TREE_H_
