@@ -58,5 +58,5 @@ class Tree {
       std::vector<char> temp_1;
       countAllPermutations(root, temp_1);
     }
-}
+};
 #endif  // INCLUDE_TREE_H_
