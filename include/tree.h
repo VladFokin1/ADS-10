@@ -13,7 +13,7 @@ class Tree {
       std::vector <Node*> childs;
     };
     Node* root;
-    
+
     void createTree(Node* root, std::vector<char> numbers) {
       if (!numbers.size()) {
         return;
@@ -29,9 +29,9 @@ class Tree {
         createTree(root->childs[i], numbers);
       }
     }
-    
+
     std::vector<std::vector<char>> allPermutations;
-  
+
     void countAllPermutations(Node* root, std::vector<char> temp) {
       if (root->value != '*') {
         temp.push_back(root->value);
@@ -51,7 +51,7 @@ class Tree {
       if (i >= allPermutations.size()) return empt;
       return allPermutations[i];
     }
-    Tree(std::vector<char> input) {
+    explicit Tree(std::vector<char> input) {
       root = new Node();
       root->value = '*';
       createTree(root, input);
