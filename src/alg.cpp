@@ -6,5 +6,5 @@
 #include  "tree.h"
 
 std::vector<char> getPerm(const Tree& tree, int n) {
-  return tree.getPermutation(n-1);
+  return Tree(tree).getPermutation(n-1);
 }
