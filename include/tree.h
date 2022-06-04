@@ -47,7 +47,7 @@ class Tree {
     }
 
  public:
-    std::vector<char> get(int i) {
+    std::vector<char> getPermutation(int i) {
       if (i >= allPermutations.size()) return "";
       return allPermutations[i];
     }
