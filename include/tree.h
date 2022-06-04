@@ -46,7 +46,7 @@ class Tree {
     }
 
  public:
-    std::vector<char> getPermutation(int i) {
+    std::vector<char> getPermutation(int i) const {
       std::vector<char> empt;
       if (i >= allPermutations.size()) return empt;
       return allPermutations[i];
